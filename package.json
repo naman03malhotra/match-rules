@@ -1,0 +1,15 @@
+{
+  "name": "matchrules",
+  "version": "1.0.1",
+  "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object",
+  "main": "src/match_rules.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Naman Malhotra",
+  "license": "MIT"
+}
