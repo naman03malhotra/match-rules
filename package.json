@@ -1,15 +1,31 @@
 {
   "name": "matchrules",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
-  "main": "src/match_rules.js",
+  "main": "lib/match_rules.js",
+  "module": "es/match_rules.js",
+  "files": [
+    "lib",
+    "es"
+  ],
   "directories": {
     "example": "examples",
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:es": "rm -rf es && BABEL_ENV=es babel src -d es",
+    "build:cjs": "rm -rf lib && BABEL_ENV=node babel src -d lib"
   },
   "author": "Naman Malhotra",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
 }
