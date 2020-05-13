@@ -8,6 +8,7 @@ It can be used on feature flags, complex conditions, conditional rendering, etc.
 
 Through npm
 `npm install matchrules --save`
+
 Through Yarn
 `yarn add matchrules`
 
