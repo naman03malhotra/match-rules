@@ -1,6 +1,8 @@
 # matchRules
 
-matchRules is a javascript utility for matching an object to defined conditions on the properties of that object (aka Rules). It can be used on feature flags, complex conditions, conditional rendering, etc.
+matchRules is javascript utility for conditional rendering (implementing business logic) of complex rules using rules and source object.
+
+It can be used on feature flags, complex conditions, conditional rendering, etc.
 
 ### Install
 
@@ -262,7 +264,7 @@ if(matchRules(
 // you can use functions to deal with complex scenarios
 ```
 
-# Debugging
+## Debugging
 
 when enabled logs a trace object for all the keys in the rule with a meaningful message of what went right and wrong.
 
