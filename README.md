@@ -261,3 +261,43 @@ if(matchRules(
 
 // you can use functions to deal with complex scenarios
 ```
+
+# Debugging
+
+when enabled logs a trace object for all the keys in the rule with a meaningful message of what went right and wrong.
+
+```js
+matchRules(sourceObject, RULES, { debug: true })
+
+// sample trace object
+{
+  "0": {
+    "company": {
+      "enable_roles": {
+        "enable_roles_one": {
+          "enable_roles_two": {
+            "value": true,
+            "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
+          }
+        }
+      },
+      "enable_roles_management": {
+        "value": true,
+        "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
+      }
+    },
+    "company_admin": {
+      "value": true,
+      "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
+    },
+    "enable_roles": {
+      "value": true,
+      "message": "Value equated for the given rule, Rule data: false (type: boolean), Source data: false (type: boolean)"
+    },
+    "temp": {
+      "value": false,
+      "message": "Function was executed for the given rule with value: 3 (type: number)"
+    }
+  }
+}
+```
