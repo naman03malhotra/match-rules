@@ -303,3 +303,9 @@ matchRules(sourceObject, RULES, { debug: true })
   }
 }
 ```
+
+### Todos
+
+- Add tests
+- Add live examples
+- Add development mode
