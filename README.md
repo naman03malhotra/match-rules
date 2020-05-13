@@ -275,15 +275,15 @@ matchRules(sourceObject, RULES, { debug: true })
 {
   "0": {
     "company": {
-      "enable_roles": {
-        "enable_roles_one": {
-          "enable_roles_two": {
+      "enable_feature": {
+        "enable_feature_one": {
+          "enable_feature_two": {
             "value": true,
             "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
           }
         }
       },
-      "enable_roles_management": {
+      "enable_people_management": {
         "value": true,
         "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
       }
@@ -292,7 +292,7 @@ matchRules(sourceObject, RULES, { debug: true })
       "value": true,
       "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
     },
-    "enable_roles": {
+    "enable_special_feature": {
       "value": true,
       "message": "Value equated for the given rule, Rule data: false (type: boolean), Source data: false (type: boolean)"
     },
