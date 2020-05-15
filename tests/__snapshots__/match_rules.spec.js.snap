@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test matchRules should log the trace object when debug is true 1`] = `
+Array [
+  "Trace object from matchRules:",
+  Object {
+    "0": Object {
+      "some_condition": Object {
+        "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)",
+        "value": true,
+      },
+      "some_feature": Object {
+        "can_edit": Object {
+          "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)",
+          "value": true,
+        },
+      },
+    },
+    "1": Object {
+      "some_feature": Object {
+        "can_send": Object {
+          "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)",
+          "value": true,
+        },
+      },
+    },
+    "2": Object {
+      "user_profile": Object {
+        "age": Object {
+          "message": "Function was executed for the given rule with value: 22 (type: number)",
+          "value": true,
+        },
+      },
+    },
+  },
+]
+`;
+
+exports[`Test matchRules should log the trace object with no rule message when no key is passed in rule object and debug is true 1`] = `
+Array [
+  "Trace object from matchRules:",
+  Object {
+    "0": Object {
+      "message": "No rule is present in the passed rule object",
+      "value": true,
+    },
+  },
+]
+`;
