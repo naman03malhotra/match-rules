@@ -305,8 +305,10 @@ matchRules(sourceObject, RULES, { debug: true })
 }
 ```
 
-### Todos
+## Development
 
-- Add tests
-- Add live examples
-- Add development mode
+For development, make the changes in the code and write appropriate unit test case.
+
+### Live Example
+
+[Live Example on Stackblitz](https://stackblitz.com/edit/matchrules)

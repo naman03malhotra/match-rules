@@ -31,7 +31,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "build": "yarn build:es & yarn build:cjs",
     "test": "BABEL_ENV='node' jest",
     "build:es": "rm -rf es && BABEL_ENV=es babel src -d es",
     "build:cjs": "rm -rf lib && BABEL_ENV=node babel src -d lib"
