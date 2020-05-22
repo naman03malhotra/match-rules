@@ -1,6 +1,6 @@
 {
   "name": "match-rules",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
   "main": "lib/match_rules.js",
   "module": "es/match_rules.js",
