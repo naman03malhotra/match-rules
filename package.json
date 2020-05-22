@@ -1,23 +1,28 @@
 {
-  "name": "matchrules",
-  "version": "1.0.7",
+  "name": "match-rules",
+  "version": "1.0.1",
   "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
   "main": "lib/match_rules.js",
   "module": "es/match_rules.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/naman03malhotra/matchRules"
+    "url": "https://github.com/naman03malhotra/match-rules"
   },
   "bugs": {
     "mail": "naman03malhotra@gmail.com",
-    "url": "https://github.com/naman03malhotra/matchRules/issues"
+    "url": "https://github.com/naman03malhotra/match-rules/issues"
   },
   "keywords": [
     "javascript",
+    "react",
+    "react-rendering",
+    "if-else",
+    "react-conditional-rendering",
     "conditional-rendering",
     "feature-flag",
     "rules",
     "matchrules",
+    "match-rules",
     "complex-conditions",
     "render-ui-based-on-flags",
     "dynamic-rendering"

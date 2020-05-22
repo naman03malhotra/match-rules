@@ -1,35 +1,35 @@
-# matchRules
+# match-rules
 
-matchRules is javascript utility for conditional rendering (implementing business logic) of complex rules using rules and source object.
+match-rules is javascript utility for conditional rendering (implementing business logic) of complex rules using rules and source object.
 
 It can be used on feature flags, complex conditions, conditional rendering, etc.
 
 ### Install
 
 Through npm
-`npm install matchrules --save`
+`npm install match-rules --save`
 
 Through Yarn
-`yarn add matchrules`
+`yarn add match-rules`
 
 ### Usage
 
 ES6
 
 ```js
-import { matchRules } from "matchrules";
+import { matchRules } from "match-rules";
 ```
 
 ES5
 
 ```js
-const matchRules = require("matchrules").matchRules;
+const matchRules = require("match-rules").matchRules;
 ```
 
 TypeScript
 
 ```js
-import { matchRules } from "matchrules";
+import { matchRules } from "match-rules";
 ```
 
 ### API
@@ -54,7 +54,7 @@ const options = {
 
 ```js
 // rules object
-import { matchRules } from "matchrules";
+import { matchRules } from "match-rules";
 
 const SHOW_JOB_RULE = {
   hasVisa: true,
@@ -121,7 +121,7 @@ const source = {
 // NOTE: you should always return boolean value from the function you implement.
 ```
 
-### Extend Rules (avoid redundancy)
+### Extending Rules (avoid redundancy)
 
 ```js
 const SHOW_ADS_RULES = {
@@ -149,16 +149,20 @@ const SHOW_ADS_RULES_INDIA = {
 **Ex 1. Feature Flags**
 
 ```js
-import { matchRules } from 'matchrules';
+import { matchRules } from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature = true,
+    enable_unique_feature: true,
+    when_user_is_admin: true,
+    age_more_than_18: 25,
 };
 
 // Rule
 const ENABLE_UNIQUE_FEATURE = {
     enable_unique_feature: true,
+    when_user_is_admin: true,
+    age_more_than_18: (),
 };
 
 if(matchRules(sourceObject, ENABLE_UNIQUE_FEATURE)) {
@@ -169,7 +173,7 @@ if(matchRules(sourceObject, ENABLE_UNIQUE_FEATURE)) {
 **Ex 2. Multiple Rules and functions implementation**
 
 ```js
-import { matchRules } from 'matchrules';
+import { matchRules } from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
@@ -199,7 +203,7 @@ if(matchRules(sourceObject, [ENABLE_UNIQUE_FEATURE, ENABLE_UNIQUE_FEATURE_WITH_A
 **Ex 3. Multiple Rules using OR operator**
 
 ```js
-import { matchRules } from 'matchrules';
+import { matchRules } from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
@@ -237,7 +241,7 @@ if(matchRules(
 **Example 3 using functions**
 
 ```js
-import { matchRules } from 'matchrules';
+import { matchRules } from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
@@ -265,6 +269,45 @@ if(matchRules(
 // you can use functions to deal with complex scenarios
 ```
 
+**Ex 4, Rule for deep source objects**
+
+```js
+import { matchRules } from 'match-rules';
+
+// this object can come from your app state
+const sourceObject = {
+  enable_unique_feature = true,
+  userData: {
+    personalData: {
+      profile: {
+        age: 18,
+        country: 'US',
+      },
+    },
+  },
+};
+
+// Rules
+const ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA = {
+  userData: {
+    personalData: {
+      profile: {
+        country: (value, sourceObject) => value === 'US' || value === 'IN',
+      },
+    },
+  },
+};
+
+// to combine rules using OR, (display feature if user is from US or INDIA)
+if(matchRules(
+    sourceObject,
+    ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA)) {
+    // render unique feature
+}
+
+// you can use functions to deal with complex scenarios
+```
+
 ## Debugging
 
 when enabled logs a trace object for all the keys in the rule with a meaningful message of what went right and wrong.
@@ -277,11 +320,9 @@ matchRules(sourceObject, RULES, { debug: true })
   "0": {
     "company": {
       "enable_feature": {
-        "enable_feature_one": {
-          "enable_feature_two": {
-            "value": true,
-            "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
-          }
+        "enable_feature_for_user": {
+          "value": true,
+          "message": "Value equated for the given rule, Rule data: true (type: boolean), Source data: true (type: boolean)"
         }
       },
       "enable_people_management": {
@@ -311,4 +352,4 @@ For development, make the changes in the code and write appropriate unit test ca
 
 ### Live Example
 
-[Live Example on Stackblitz](https://stackblitz.com/edit/matchrules)
+[Live Example on Stackblitz](https://stackblitz.com/edit/match-rules)
