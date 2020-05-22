@@ -6,9 +6,9 @@ It can be used on feature flags, complex conditions, conditional rendering, etc.
 
 ### Install
 
-[![Build Status](https://github.com/naman03malhotra/match-rules/workflows/CI/badge.svg)](https://github.com/naman03malhotra/match-rules/actions)
+[![Build Status](https://github.com/naman03malhotra/match-rules/workflows/CI/badge.svg?branch=master)](https://github.com/naman03malhotra/match-rules/actions)
 
-[![Build Status](https://github.com/naman03malhotra/match-rules/workflows/CD/badge.svg)](https://github.com/naman03malhotra/match-rules/actions)
+[![Build Status](https://github.com/naman03malhotra/match-rules/workflows/CD/badge.svg?branch=master)](https://github.com/naman03malhotra/match-rules/actions)
 
 Through npm
 `npm install match-rules --save`
