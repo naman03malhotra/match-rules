@@ -1,0 +1,51 @@
+{
+  "name": "match-rules",
+  "version": "1.0.1",
+  "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
+  "main": "lib/match_rules.js",
+  "module": "es/match_rules.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naman03malhotra/match-rules"
+  },
+  "bugs": {
+    "mail": "naman03malhotra@gmail.com",
+    "url": "https://github.com/naman03malhotra/match-rules/issues"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "react-rendering",
+    "if-else",
+    "react-conditional-rendering",
+    "conditional-rendering",
+    "feature-flag",
+    "rules",
+    "matchrules",
+    "match-rules",
+    "complex-conditions",
+    "render-ui-based-on-flags",
+    "dynamic-rendering"
+  ],
+  "files": [
+    "lib",
+    "es"
+  ],
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "yarn build:es & yarn build:cjs",
+    "test": "BABEL_ENV='node' jest",
+    "build:es": "rm -rf es && BABEL_ENV=es babel src -d es",
+    "build:cjs": "rm -rf lib && BABEL_ENV=node babel src -d lib"
+  },
+  "author": "Naman Malhotra",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-env": "^7.9.6",
+    "jest": "^26.0.1"
+  }
+}
