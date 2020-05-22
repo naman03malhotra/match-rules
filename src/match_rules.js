@@ -90,4 +90,4 @@ function matchRules(source, rules, options = {}) {
   return handleResult(result, trace, debug);
 }
 
-export { matchRules };
+export default matchRules;
