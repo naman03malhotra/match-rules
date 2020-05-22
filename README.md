@@ -21,19 +21,19 @@ Through Yarn
 ES6
 
 ```js
-import { matchRules } from "match-rules";
+import matchRules from "match-rules";
 ```
 
 ES5
 
 ```js
-const matchRules = require("match-rules").matchRules;
+const matchRules = require("match-rules");
 ```
 
 TypeScript
 
 ```js
-import { matchRules } from "match-rules";
+import matchRules from "match-rules";
 ```
 
 ### API
@@ -58,7 +58,7 @@ const options = {
 
 ```js
 // rules object
-import { matchRules } from "match-rules";
+import matchRules from "match-rules";
 
 const SHOW_JOB_RULE = {
   hasVisa: true,
@@ -153,7 +153,7 @@ const SHOW_ADS_RULES_INDIA = {
 **Ex 1. Feature Flags**
 
 ```js
-import { matchRules } from 'match-rules';
+import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
@@ -177,7 +177,7 @@ if(matchRules(sourceObject, ENABLE_UNIQUE_FEATURE)) {
 **Ex 2. Multiple Rules and functions implementation**
 
 ```js
-import { matchRules } from 'match-rules';
+import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
@@ -207,7 +207,7 @@ if(matchRules(sourceObject, [ENABLE_UNIQUE_FEATURE, ENABLE_UNIQUE_FEATURE_WITH_A
 **Ex 3. Multiple Rules using OR operator**
 
 ```js
-import { matchRules } from 'match-rules';
+import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
@@ -245,7 +245,7 @@ if(matchRules(
 **Example 3 using functions**
 
 ```js
-import { matchRules } from 'match-rules';
+import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
@@ -276,7 +276,7 @@ if(matchRules(
 **Ex 4, Rule for deep source objects**
 
 ```js
-import { matchRules } from 'match-rules';
+import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {

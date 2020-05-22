@@ -1,4 +1,4 @@
-import { matchRules } from "../src/match_rules";
+import matchRules from "../src/match_rules";
 import { NO_SOURCE_PASSED_ERR, NO_ARRAY_ERROR } from "../src/constants";
 
 describe("Test matchRules", () => {
