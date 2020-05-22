@@ -1,6 +1,6 @@
 // @flow
 
-import { NO_RULE_PRESENT, messageMap } from "./constants";
+import { NO_RULES_PRESENT, messageMap } from "./constants";
 
 export function debugTrace(value, trace, rule, sourceToCompare, typeOfMatch) {
   // assign value and trace message only to leaf nodes
@@ -9,7 +9,7 @@ export function debugTrace(value, trace, rule, sourceToCompare, typeOfMatch) {
     // call the corresponding message function for trace with source and rule
     trace.message = messageMap[typeOfMatch]
       ? messageMap[typeOfMatch](sourceToCompare, rule)
-      : NO_RULE_PRESENT;
+      : NO_RULES_PRESENT;
   }
 }
 

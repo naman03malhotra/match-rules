@@ -41,7 +41,7 @@ Array [
   "Trace object from matchRules:",
   Object {
     "0": Object {
-      "message": "No rule is present in the passed rule object",
+      "message": "No rules are present in the passed rule object",
       "value": true,
     },
   },
