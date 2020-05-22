@@ -27,7 +27,7 @@ import matchRules from "match-rules";
 ES5
 
 ```js
-const matchRules = require("match-rules");
+const matchRules = require("match-rules").default;
 ```
 
 TypeScript
