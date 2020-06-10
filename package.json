@@ -1,9 +1,8 @@
 {
   "name": "match-rules",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
   "main": "lib/match_rules.js",
-  "module": "es/match_rules.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/naman03malhotra/match-rules"
@@ -28,18 +27,15 @@
     "dynamic-rendering"
   ],
   "files": [
-    "lib",
-    "es"
+    "lib"
   ],
   "directories": {
     "example": "examples",
     "test": "tests"
   },
   "scripts": {
-    "build": "yarn build:es & yarn build:cjs",
     "test": "BABEL_ENV='node' jest",
-    "build:es": "rm -rf es && BABEL_ENV=es babel src -d es",
-    "build:cjs": "rm -rf lib && BABEL_ENV=node babel src -d lib"
+    "build": "rm -rf lib && babel src -d lib"
   },
   "author": "Naman Malhotra",
   "license": "MIT",
