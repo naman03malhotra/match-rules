@@ -1,6 +1,6 @@
 {
   "name": "match-rules",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
   "main": "lib/match_rules.js",
   "repository": {
@@ -34,14 +34,15 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "BABEL_ENV='node' jest",
+    "test": "jest",
     "build": "rm -rf lib && babel src -d lib"
   },
   "author": "Naman Malhotra",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/preset-env": "^7.9.6",
-    "jest": "^26.0.1"
+    "@babel/cli": "7.8.4",
+    "@babel/preset-env": "7.9.6",
+    "jest": "26.0.1",
+    "microbundle": "0.12.0"
   }
 }
