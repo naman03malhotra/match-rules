@@ -153,24 +153,24 @@ const SHOW_ADS_RULES_INDIA = {
 **Ex 1. Feature Flags**
 
 ```js
-import matchRules from 'match-rules';
+import matchRules from "match-rules";
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature: true,
-    when_user_is_admin: true,
-    age_more_than_18: 25,
+  enable_unique_feature: true,
+  when_user_is_admin: true,
+  age_more_than_18: 25,
 };
 
 // Rule
 const ENABLE_UNIQUE_FEATURE = {
-    enable_unique_feature: true,
-    when_user_is_admin: true,
-    age_more_than_18: (),
+  enable_unique_feature: true,
+  when_user_is_admin: true,
+  age_more_than_18: (value, sourceObject) => value > 18,
 };
 
-if(matchRules(sourceObject, ENABLE_UNIQUE_FEATURE)) {
-    // render unique feature
+if (matchRules(sourceObject, ENABLE_UNIQUE_FEATURE)) {
+  // render unique feature
 }
 ```
 
