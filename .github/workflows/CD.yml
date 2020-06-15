@@ -24,13 +24,17 @@ jobs:
           node-version: ${{ matrix.node }}
           registry-url: https://registry.npmjs.org
       - name: install
-        run: npm install
+        run: yarn
       - name: test
-        run: npm test
+        run: yarn test --coverage
+      - name: coverage
+        uses: coverallsapp/github-action@v1.1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: build
-        run: npm run build
+        run: yarn run build
       - name: release
-        run: npm publish
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,6 +1,6 @@
 {
   "name": "match-rules",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
   "main": "lib/match_rules.js",
   "repository": {
@@ -35,6 +35,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "build": "rm -rf lib && babel src -d lib"
   },
   "author": "Naman Malhotra",
