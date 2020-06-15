@@ -35,6 +35,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "build": "rm -rf lib && babel src -d lib"
   },
   "author": "Naman Malhotra",

@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           registry-url: https://registry.npmjs.org
+      - name: install
+        run: npm install
+      - name: test
+        run: npm test --coverage
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v1.1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: install
-        run: npm install
-      - name: test
-        run: npm test
