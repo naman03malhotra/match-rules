@@ -72,7 +72,10 @@ describe("Test matchRules", () => {
     expect(matchRuleWithArray).toThrow(Error, NO_ARRAY_ERROR);
   });
 
-  it("should return true when all the conditions of a rule is met", () => {
+  it("should return true when all the conditions of a rule is met and it should execute recusive function only when object has it own property", () => {
+    // this part cover the for--in branch of coverage, for--in also iteraters over the inherted property on an object, to avaid that I have added a if condition in the code.
+    MAIN_RULE.__proto__ = { protoMod: 1 };
+
     expect(matchRules(mainSource, MAIN_RULE)).toBe(true);
   });
 
@@ -80,9 +83,14 @@ describe("Test matchRules", () => {
     expect(matchRules(mainSource, MAIN_RULE_MOD)).toBe(false);
   });
 
-  it("should return true when all the conditions are met while passing multiple rules", () => {
+  it("should return true when all the conditions are met while passing multiple rules and it should execute recusive function only when object has it own property", () => {
     // default 'and' operator is used to concatinate the results
-    expect(matchRules(mainSource, [MAIN_RULE, MAIN_RULE_TWO])).toBe(true);
+    const MULTI_RULES = [MAIN_RULE, MAIN_RULE_TWO];
+
+    // this part cover the for--in branch of coverage, for--in also iteraters over the inherted property on an object, to avaid that I have added a if condition in the code.
+    MULTI_RULES.__proto__ = { protoMod: 1 };
+
+    expect(matchRules(mainSource, MULTI_RULES)).toBe(true);
   });
   it("should return false when atmost one of the condition is not met while passing multiple rules", () => {
     expect(matchRules(mainSource, [MAIN_RULE_MOD, MAIN_RULE_TWO])).toBe(false);
