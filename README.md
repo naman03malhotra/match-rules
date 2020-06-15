@@ -10,7 +10,7 @@ It can be used on feature flags, complex conditions, conditional rendering, etc.
 
 [![Build Status](https://github.com/naman03malhotra/match-rules/workflows/CD/badge.svg?branch=master)](https://github.com/naman03malhotra/match-rules/actions)
 
-[![Coverage Status](https://coveralls.io/repos/github/naman03malhotra/match-rules/badge.svg?branch=master)](https://coveralls.io/github/naman03malhotra/match-rules?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/naman03malhotra/match-rules/badge.svg?branch=master&kill_cache=1)](https://coveralls.io/github/naman03malhotra/match-rules?branch=master&kill_cache=1)
 
 Through npm
 `npm install match-rules --save`
