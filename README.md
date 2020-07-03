@@ -183,7 +183,7 @@ import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature = true,
+    enable_unique_feature: true,
     profile: {
         age: 18,
     },
@@ -213,7 +213,7 @@ import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature = true,
+    enable_unique_feature: true,
     profile: {
         age: 18,
         country: 'US',
@@ -251,7 +251,7 @@ import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature = true,
+    enable_unique_feature: true,
     profile: {
         age: 18,
         country: 'US',
@@ -282,7 +282,7 @@ import matchRules from 'match-rules';
 
 // this object can come from your app state
 const sourceObject = {
-  enable_unique_feature = true,
+  enable_unique_feature: true,
   userData: {
     personalData: {
       profile: {
