@@ -12,6 +12,8 @@ It can be used on feature flags, complex conditions, conditional rendering, etc.
 
 [![Coverage Status](https://coveralls.io/repos/github/naman03malhotra/match-rules/badge.svg?branch=master&kill_cache=1)](https://coveralls.io/github/naman03malhotra/match-rules?branch=master&kill_cache=1)
 
+[![npm](https://img.shields.io/npm/dm/match-rules)](https://www.npmjs.com/package/match-rules)
+
 Through npm
 `npm install match-rules --save`
 
@@ -179,66 +181,74 @@ if (matchRules(sourceObject, ENABLE_UNIQUE_FEATURE)) {
 **Ex 2. Multiple Rules and functions implementation**
 
 ```js
-import matchRules from 'match-rules';
+import matchRules from "match-rules";
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature: true,
-    profile: {
-        age: 18,
-    },
+  enable_unique_feature: true,
+  profile: {
+    age: 18,
+  },
 };
 
 // Rules
 const ENABLE_UNIQUE_FEATURE = {
-    enable_unique_feature: true,
+  enable_unique_feature: true,
 };
 
 const ENABLE_UNIQUE_FEATURE_WITH_AGE_18YO = {
-    profile: {
-        age: (value, sourceObject) => value > 18,
-    },
+  profile: {
+    age: (value, sourceObject) => value > 18,
+  },
 };
 
 // by default multiple rules will be combined using AND operator
-if(matchRules(sourceObject, [ENABLE_UNIQUE_FEATURE, ENABLE_UNIQUE_FEATURE_WITH_AGE_18YO])) {
-    // render unique feature
+if (
+  matchRules(sourceObject, [
+    ENABLE_UNIQUE_FEATURE,
+    ENABLE_UNIQUE_FEATURE_WITH_AGE_18YO,
+  ])
+) {
+  // render unique feature
 }
 ```
 
 **Ex 3. Multiple Rules using OR operator**
 
 ```js
-import matchRules from 'match-rules';
+import matchRules from "match-rules";
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature: true,
-    profile: {
-        age: 18,
-        country: 'US',
-    },
+  enable_unique_feature: true,
+  profile: {
+    age: 18,
+    country: "US",
+  },
 };
 
 // Rules
 const ENABLE_UNIQUE_FEATURE_FOR_US = {
-    profile: {
-        country: 'US',
-    },
+  profile: {
+    country: "US",
+  },
 };
 
 const ENABLE_UNIQUE_FEATURE_FOR_INDIA = {
-    profile: {
-        country: 'IN',
-    },
+  profile: {
+    country: "IN",
+  },
 };
 
 // to combine rules using OR, (display feature if user is from US or INDIA)
-if(matchRules(
+if (
+  matchRules(
     sourceObject,
     [ENABLE_UNIQUE_FEATURE_FOR_US, ENABLE_UNIQUE_FEATURE_FOR_INDIA],
-    { operator: 'or'})) {
-    // render unique feature
+    { operator: "or" }
+  )
+) {
+  // render unique feature
 }
 
 // you can pass as many rules you want
@@ -247,29 +257,27 @@ if(matchRules(
 **Example 3 using functions**
 
 ```js
-import matchRules from 'match-rules';
+import matchRules from "match-rules";
 
 // this object can come from your app state
 const sourceObject = {
-    enable_unique_feature: true,
-    profile: {
-        age: 18,
-        country: 'US',
-    },
+  enable_unique_feature: true,
+  profile: {
+    age: 18,
+    country: "US",
+  },
 };
 
 // Rules
 const ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA = {
-    profile: {
-        country: (value, sourceObject) => value === 'US' || value === 'IN',
-    },
+  profile: {
+    country: (value, sourceObject) => value === "US" || value === "IN",
+  },
 };
 
 // to combine rules using OR, (display feature if user is from US or INDIA)
-if(matchRules(
-    sourceObject,
-    ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA)) {
-    // render unique feature
+if (matchRules(sourceObject, ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA)) {
+  // render unique feature
 }
 
 // you can use functions to deal with complex scenarios
@@ -278,7 +286,7 @@ if(matchRules(
 **Ex 4, Rule for deep source objects**
 
 ```js
-import matchRules from 'match-rules';
+import matchRules from "match-rules";
 
 // this object can come from your app state
 const sourceObject = {
@@ -287,7 +295,7 @@ const sourceObject = {
     personalData: {
       profile: {
         age: 18,
-        country: 'US',
+        country: "US",
       },
     },
   },
@@ -298,17 +306,15 @@ const ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA = {
   userData: {
     personalData: {
       profile: {
-        country: (value, sourceObject) => value === 'US' || value === 'IN',
+        country: (value, sourceObject) => value === "US" || value === "IN",
       },
     },
   },
 };
 
 // to combine rules using OR, (display feature if user is from US or INDIA)
-if(matchRules(
-    sourceObject,
-    ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA)) {
-    // render unique feature
+if (matchRules(sourceObject, ENABLE_UNIQUE_FEATURE_FOR_US_OR_INDIA)) {
+  // render unique feature
 }
 
 // you can use functions to deal with complex scenarios
