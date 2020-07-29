@@ -110,10 +110,55 @@ describe("Test matchRules", () => {
     ).toBe(false);
   });
 
-  it("should return false when the value of the rule is missing/undefined in the source object (graceful exit)", () => {
+  it("should return false when the value of the rule is missing in the source object (graceful exit)", () => {
     const modSource = {
       ...mainSource,
       some_feature: {},
+    };
+
+    expect(matchRules(modSource, MAIN_RULE_TWO)).toBe(false);
+  });
+
+  it("should return false when the value of the rule is undefined in the source object (graceful exit)", () => {
+    const modSource = {
+      ...mainSource,
+      some_feature: undefined,
+    };
+
+    expect(matchRules(modSource, MAIN_RULE_TWO)).toBe(false);
+  });
+
+  it("should return false when the value of the rule is null in the source object (graceful exit)", () => {
+    const modSource = {
+      ...mainSource,
+      some_feature: null,
+    };
+
+    expect(matchRules(modSource, MAIN_RULE_TWO)).toBe(false);
+  });
+
+  it("should return false when the value of the rule is Array in the source object (graceful exit)", () => {
+    const modSource = {
+      ...mainSource,
+      some_feature: ["a"],
+    };
+
+    expect(matchRules(modSource, MAIN_RULE_TWO)).toBe(false);
+  });
+
+  it("should return false when the value of the rule is String in the source object (graceful exit)", () => {
+    const modSource = {
+      ...mainSource,
+      some_feature: "abc",
+    };
+
+    expect(matchRules(modSource, MAIN_RULE_TWO)).toBe(false);
+  });
+
+  it("should return false when the value of the rule is Number in the source object (graceful exit)", () => {
+    const modSource = {
+      ...mainSource,
+      some_feature: 0,
     };
 
     expect(matchRules(modSource, MAIN_RULE_TWO)).toBe(false);
