@@ -31,8 +31,12 @@ function recursiveRuleUtil(
     for (const currentDeepKey in rule) {
       if (rule.hasOwnProperty(currentDeepKey)) {
         trace[currentDeepKey] = {};
+
+        // In case if the sourceToCompare is undefined in the original source object as compared to the values the rules object
+        const nextDataSource = sourceToCompare || {};
+
         result = recursiveRuleUtil(
-          sourceToCompare[currentDeepKey],
+          nextDataSource[currentDeepKey],
           rule[currentDeepKey],
           trace[currentDeepKey],
           originalSource,
