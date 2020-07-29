@@ -21,6 +21,12 @@ Tags:
 Good to have: commit or PR links.
 -->
 
+## 1.3.1 [#21](https://github.com/naman03malhotra/match-rules/pull/21)
+
+### Patch
+
+- Minor: Fix when source is a different type, exit gracefully
+
 ## 1.3.0 [#20](https://github.com/naman03malhotra/match-rules/pull/20)
 
 ### Minor
@@ -33,25 +39,25 @@ Good to have: commit or PR links.
 
 - ReadMe and example updates
 
-## 1.2.3 [#13](https://github.com/naman03malhotra/match-rules/pull/13/files)
+## 1.2.3 [#13](https://github.com/naman03malhotra/match-rules/pull/13)
 
 ### Patch
 
 - added coveralls coverage for code
 
-## 1.2.0 [#9](https://github.com/naman03malhotra/match-rules/pull/9/files)
+## 1.2.0 [#9](https://github.com/naman03malhotra/match-rules/pull/9)
 
 ### Minor
 
 - Removed esm module build and added MIT license
 
-## 1.1.1 [#8](https://github.com/naman03malhotra/match-rules/pull/8/files)
+## 1.1.1 [#8](https://github.com/naman03malhotra/match-rules/pull/8)
 
 ### Minor
 
 - MatchRules is now a default export
 
-### 1.0.1 [#1](https://github.com/naman03malhotra/match-rules/pull/1/files)
+### 1.0.1 [#1](https://github.com/naman03malhotra/match-rules/pull/1)
 
 ### Feat (Major)
 
