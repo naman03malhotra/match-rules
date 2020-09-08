@@ -12,7 +12,7 @@ It can be used on feature flags, complex conditions, conditional rendering, etc.
 
 [![Coverage Status](https://coveralls.io/repos/github/naman03malhotra/match-rules/badge.svg?branch=master&kill_cache=1)](https://coveralls.io/github/naman03malhotra/match-rules?branch=master&kill_cache=1)
 
-[![npm](https://img.shields.io/npm/dm/match-rules)](https://www.npmjs.com/package/match-rules)
+<!-- [![npm](https://img.shields.io/npm/dm/match-rules)](https://www.npmjs.com/package/match-rules) -->
 
 Through npm
 `npm install match-rules --save`
