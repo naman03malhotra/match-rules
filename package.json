@@ -1,7 +1,7 @@
 {
   "name": "match-rules",
-  "version": "1.3.2",
-  "description": "A javascript utility for conditional rendering (implementing business logic) of complex rules using a rules and source object.",
+  "version": "1.3.3",
+  "description": "A tiny JavaScript utility that lets you write your conditional business logic in a declarative pattern (React like).",
   "main": "lib/match_rules.js",
   "repository": {
     "type": "git",
@@ -13,7 +13,10 @@
   },
   "keywords": [
     "javascript",
+    "declarative",
+    "imperative",
     "react",
+    "react-like",
     "react-rendering",
     "if-else",
     "react-conditional-rendering",
