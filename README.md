@@ -14,7 +14,7 @@ I wrote a [detailed blog post](), please have a read (5 mins tops).
 
 [![Coverage Status](https://coveralls.io/repos/github/naman03malhotra/match-rules/badge.svg?branch=master&kill_cache=1)](https://coveralls.io/github/naman03malhotra/match-rules?branch=master&kill_cache=1)
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/match-rules?label=GZipped&style=for-the-badge)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/match-rules?label=GZipped&style=for-the-badge)](https://bundlephobia.com/result?p=match-rules)
 
 <!-- [![npm](https://img.shields.io/npm/dm/match-rules)](https://www.npmjs.com/package/match-rules) -->
 
