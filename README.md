@@ -1,10 +1,10 @@
 # match-rules
 
-A tiny JavaScript utility that lets you write your conditional business logic in a declarative pattern (React like).
+A tiny (1kb GZipped) zero dependency JavaScript utility that lets you write your conditional business logic in a declarative pattern (React like).
 
 It can be used with feature flags, complex conditions, conditional rendering, and the rest is your imagination.
 
-I wrote a [detailed blog post](), please have a read (5 mins tops).
+_**I wrote a [detailed blog post](), please do read it to understand the thought process in depth (5 mins tops).**_
 
 ### Install
 
@@ -115,6 +115,24 @@ if (matchRules(user, SHOW_JOB_RULE)) {
 
 - **Multiple operator support** - you can pass or / and operators in case of multiple rules.
   Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
+
+### Why would you want to use it in your projects.
+
+- Reduces cognitive complexity.
+
+- Easy to maintain, declarative in nature.
+
+- Code is more readable, you can separate conditional logic in a `rules.js` file.
+
+- You do not have to write unit tests for those conditions individually, just take a snapshot at max.
+
+- Reduce code redundancy (you can compose and extend rules).
+
+- You do not have to traverse nested objects, just write your rules with the same structure.
+
+- Any conditional (complex) case can be handled using a function.
+
+- Easily manage your AB testing logic.
 
 ### Function Support:
 
@@ -403,6 +421,6 @@ matchRules(sourceObject, RULES, { debug: true })
 For development, please make the changes in the code and write appropriate unit test case.
 Feel free to send across a Pull Request if it doesn't fit your use-case.
 
-## Dependency free library
+## Zero dependency library
 
 `match-rules` does not have any dependency, it is just 1kb (GZipped) in size.
