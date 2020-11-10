@@ -38,7 +38,25 @@ describe("Test matchRules", () => {
     data: ["a", "b"],
   };
 
+  const RULE_WITH_STRING = {
+    user_profile: {
+      name: "Cool Name",
+    },
+  };
+
+  // rule as a function || create dynamic rule on the fly.
+  // Ex - can be used when you want to show the edit option for a post only to the creator among multiple posts.
+  const RULE_AS_FUNCTION = function (mainSource) {
+    return {
+      user_id: mainSource.user_id,
+      some_feature: {
+        can_edit: true,
+      },
+    };
+  };
+
   const mainSource = {
+    user_id: 123,
     user_profile: {
       age: 22,
       name: "Cool Name",
@@ -72,37 +90,37 @@ describe("Test matchRules", () => {
     expect(matchRuleWithArray).toThrow(Error, NO_ARRAY_ERROR);
   });
 
-  it("should return true when all the conditions of a rule is met and it should execute recusive function only when object has it own property", () => {
-    // this part cover the for--in branch of coverage, for--in also iteraters over the inherted property on an object, to avaid that I have added a if condition in the code.
+  it("should return true when all the conditions of a rule is met and it should execute recursive function only when object has it own property", () => {
+    // this part cover the for--in branch of coverage, for--in also iterators over the inherited property on an object, to avoid that I have added a if condition in the code.
     MAIN_RULE.__proto__ = { protoMod: 1 };
 
     expect(matchRules(mainSource, MAIN_RULE)).toBe(true);
   });
 
-  it("should return false when atmost one of the condition is not met", () => {
+  it("should return false when at most one of the condition is not met", () => {
     expect(matchRules(mainSource, MAIN_RULE_MOD)).toBe(false);
   });
 
-  it("should return true when all the conditions are met while passing multiple rules and it should execute recusive function only when object has it own property", () => {
-    // default 'and' operator is used to concatinate the results
+  it("should return true when all the conditions are met while passing multiple rules and it should execute recursive function only when object has it own property", () => {
+    // default 'and' operator is used to concatenate the results
     const MULTI_RULES = [MAIN_RULE, MAIN_RULE_TWO];
 
-    // this part cover the for--in branch of coverage, for--in also iteraters over the inherted property on an object, to avaid that I have added a if condition in the code.
+    // this part cover the for--in branch of coverage, for--in also iterators over the inherited property on an object, to avoid that I have added a if condition in the code.
     MULTI_RULES.__proto__ = { protoMod: 1 };
 
     expect(matchRules(mainSource, MULTI_RULES)).toBe(true);
   });
-  it("should return false when atmost one of the condition is not met while passing multiple rules", () => {
+  it("should return false when at most one of the condition is not met while passing multiple rules", () => {
     expect(matchRules(mainSource, [MAIN_RULE_MOD, MAIN_RULE_TWO])).toBe(false);
   });
 
-  it('should return true when atleast one RULE returns true while passing multuple rules compared with "or" operator', () => {
+  it('should return true when at least one RULE returns true while passing multiple rules compared with "or" operator', () => {
     expect(
       matchRules(mainSource, [MAIN_RULE_MOD, MAIN_RULE_TWO], { operator: "or" })
     ).toBe(true);
   });
 
-  it('should return false when all the RULEs returns false while passing multuple rules compared with "or" operator', () => {
+  it('should return false when all the RULEs returns false while passing multiple rules compared with "or" operator', () => {
     expect(
       matchRules(mainSource, [MAIN_RULE_MOD, MAIN_RULE_TWO_MOD], {
         operator: "or",
@@ -164,17 +182,15 @@ describe("Test matchRules", () => {
     expect(matchRules(modSource, MAIN_RULE_TWO)).toBe(false);
   });
 
+  it("should return true when the dynamic rule is matched to the source object", () => {
+    expect(matchRules(mainSource, RULE_AS_FUNCTION(mainSource))).toBe(true);
+  });
+
   it("should execute function when encountered in the rule and pass the corresponding key of that level from the source object", () => {
     expect(matchRules(mainSource, RULE_WITH_FUNCTION)).toBe(true);
   });
 
   it("should do string matching when the rule has a string value", () => {
-    const RULE_WITH_STRING = {
-      user_profile: {
-        name: "Cool Name",
-      },
-    };
-
     expect(matchRules(mainSource, RULE_WITH_STRING)).toBe(true);
   });
 

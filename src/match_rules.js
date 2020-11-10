@@ -60,7 +60,7 @@ function matchRules(source, rules, options = {}) {
     throw new Error(NO_SOURCE_PASSED_ERR);
   }
 
-  // initial value for result to concatinate outputs from other rules
+  // initial value for result to concatenate outputs from other rules
   let result = operator === "and" ? true : false;
 
   // condition to handle if a single role is passed

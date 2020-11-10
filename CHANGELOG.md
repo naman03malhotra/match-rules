@@ -21,6 +21,12 @@ Tags:
 Good to have: commit or PR links.
 -->
 
+## 1.3.3 [#23](https://github.com/naman03malhotra/match-rules/pull/23)
+
+### Patch
+
+- Minor: Added more examples in readme file, updated description and fixed typos. Added unit test for dynamic rule.
+
 ## 1.3.1 [#21](https://github.com/naman03malhotra/match-rules/pull/21)
 
 ### Patch
