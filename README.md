@@ -1,6 +1,6 @@
 # match-rules
 
-A tiny (1kb GZipped) zero dependency JavaScript utility that lets you write your conditional business logic in a declarative pattern (React like).
+A tiny (1kB GZipped) zero dependency JavaScript utility that lets you write your conditional business logic in a declarative pattern (React like).
 
 It can be used with feature flags, complex conditions, conditional rendering, and the rest is your imagination.
 
@@ -423,4 +423,4 @@ Feel free to send across a Pull Request if it doesn't fit your use-case.
 
 ## Zero dependency library
 
-`match-rules` does not have any dependency, it is just 1kb (GZipped) in size.
+`match-rules` does not have any dependency, it is just 1kB (GZipped) in size.
