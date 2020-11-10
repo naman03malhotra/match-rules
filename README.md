@@ -4,7 +4,7 @@ A tiny (1kb GZipped) zero dependency JavaScript utility that lets you write your
 
 It can be used with feature flags, complex conditions, conditional rendering, and the rest is your imagination.
 
-_**I wrote a [detailed blog post](), please do read it to understand the thought process in depth (5 mins tops).**_
+_**I wrote a [detailed blog post](https://dev.to/naman03malhotra/declaring-your-business-logic-like-react-9d9), please do read it to understand the thought process in depth (5 mins tops).**_
 
 ### Install
 
