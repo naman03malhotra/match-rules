@@ -9,14 +9,14 @@ _**I wrote a [detailed blog post](https://dev.to/naman03malhotra/declaring-your-
 ### Install
 
 [![Build Status](https://github.com/naman03malhotra/match-rules/workflows/CI/badge.svg?branch=master)](https://github.com/naman03malhotra/match-rules/actions)
-
 [![Build Status](https://github.com/naman03malhotra/match-rules/workflows/CD/badge.svg?branch=master)](https://github.com/naman03malhotra/match-rules/actions)
-
 [![Coverage Status](https://coveralls.io/repos/github/naman03malhotra/match-rules/badge.svg?branch=master&kill_cache=1)](https://coveralls.io/github/naman03malhotra/match-rules?branch=master&kill_cache=1)
+[![npm](https://img.shields.io/npm/dm/match-rules)](https://www.npmjs.com/package/match-rules)
+![npm](https://img.shields.io/npm/dt/match-rules)
+![NPM](https://img.shields.io/npm/l/match-rules)
+[![npm](https://img.shields.io/npm/v/match-rules)](https://www.npmjs.com/package/match-rules)
 
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/match-rules?label=GZipped&style=for-the-badge)](https://bundlephobia.com/result?p=match-rules)
-
-<!-- [![npm](https://img.shields.io/npm/dm/match-rules)](https://www.npmjs.com/package/match-rules) -->
 
 Through Yarn
 `yarn add match-rules`
