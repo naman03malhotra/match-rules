@@ -1,6 +1,6 @@
 # match-rules
 
-A tiny (1kB GZipped) zero dependency JavaScript utility that lets you write your conditional business logic in a declarative pattern (React like).
+A tiny (1kB GZipped) zero dependency JavaScript utility that lets you write your conditional business logic in a declarative way (React like).
 
 It can be used with feature flags, complex conditions, conditional rendering, and the rest is your imagination.
 
