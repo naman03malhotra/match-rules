@@ -30,7 +30,7 @@ describe("Test matchRules", () => {
 
   const RULE_WITH_FUNCTION = {
     user_profile: {
-      age: (value) => value > 18 && value < 50,
+      age: (value, sourceObject) => (value > 18 && value < 50) && sourceObject.country === 'USA' || sourceObject.show_ads === true,
     },
   };
 
@@ -67,6 +67,7 @@ describe("Test matchRules", () => {
       can_send: true,
       can_delete: false,
     },
+    country: 'USA'
   };
 
   beforeEach(() => {
@@ -187,6 +188,10 @@ describe("Test matchRules", () => {
   });
 
   it("should execute function when encountered in the rule and pass the corresponding key of that level from the source object", () => {
+    expect(matchRules(mainSource, RULE_WITH_FUNCTION)).toBe(true);
+  });
+
+  it("should execute the function with two parameters and second param when be includes source param's all keys", () => {
     expect(matchRules(mainSource, RULE_WITH_FUNCTION)).toBe(true);
   });
 
