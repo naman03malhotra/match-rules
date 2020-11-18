@@ -193,7 +193,7 @@ describe("Test matchRules", () => {
     expect(matchRules(mainSource, RULE_WITH_FUNCTION)).toBe(true);
   });
 
-  it("should execute the function with two parameters and second param when be includes source param's all keys", () => {
+  it("should execute the function with two parameters first being the key's value and second being the original source object", () => {
     const spyFn = jest.spyOn(RULE_WITH_FUNCTION.user_profile, "age");
 
     const result = matchRules(mainSource, RULE_WITH_FUNCTION);
