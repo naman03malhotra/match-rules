@@ -30,7 +30,9 @@ describe("Test matchRules", () => {
 
   const RULE_WITH_FUNCTION = {
     user_profile: {
-      age: (value) => value > 18 && value < 50,
+      age: (value, sourceObject) =>
+        (value > 18 && value < 50 && sourceObject.country === "USA") ||
+        sourceObject.show_ads === true,
     },
   };
 
@@ -67,6 +69,7 @@ describe("Test matchRules", () => {
       can_send: true,
       can_delete: false,
     },
+    country: "USA",
   };
 
   beforeEach(() => {
@@ -188,6 +191,17 @@ describe("Test matchRules", () => {
 
   it("should execute function when encountered in the rule and pass the corresponding key of that level from the source object", () => {
     expect(matchRules(mainSource, RULE_WITH_FUNCTION)).toBe(true);
+  });
+
+  it("should execute the function with two parameters first being the key's value and second being the original source object", () => {
+    const spyFn = jest.spyOn(RULE_WITH_FUNCTION.user_profile, "age");
+
+    const result = matchRules(mainSource, RULE_WITH_FUNCTION);
+    expect(spyFn).toBeCalledTimes(1);
+    expect(spyFn).toBeCalledWith(mainSource.user_profile.age, mainSource);
+    expect(result).toBe(true);
+
+    spyFn.mockRestore();
   });
 
   it("should do string matching when the rule has a string value", () => {
