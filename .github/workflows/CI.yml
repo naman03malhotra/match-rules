@@ -10,8 +10,6 @@ on:
       - master
 
   pull_request_target:
-    branches-ignore:
-      - master
 
 jobs:
   test:
