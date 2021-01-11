@@ -111,7 +111,7 @@ describe("Test matchRules", () => {
     // this part cover the for--in branch of coverage, for--in also iterators over the inherited property on an object, to avoid that I have added a if condition in the code.
     MULTI_RULES.__proto__ = { protoMod: 1 };
 
-    expect(matchRules(mainSource, MULTI_RULES)).toBe(true);
+    expect(matchRules(mainSource, MULTI_RULES)).toBe(false);
   });
   it("should return false when at most one of the condition is not met while passing multiple rules", () => {
     expect(matchRules(mainSource, [MAIN_RULE_MOD, MAIN_RULE_TWO])).toBe(false);
