@@ -1,6 +1,6 @@
 {
   "name": "match-rules",
-  "version": "1.3.6",
+  "version": "1.3.8",
   "description": "A tiny (1kB GZipped) zero dependency JavaScript utility that lets you write your conditional business logic in a declarative way (React like).",
   "main": "lib/match_rules.js",
   "repository": {
